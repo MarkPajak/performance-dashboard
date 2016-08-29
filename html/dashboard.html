@@ -1,0 +1,22 @@
+<main id="content" class="group" role="main" ng-controller="dashboard-controller">
+
+
+<div class="span12">
+<div style="padding:0 19px">
+<section id="wrapper">
+
+	<div  ng-hide="currentPath === '/'"  ng-include="'html/menu.html'"></div>
+
+
+	<div class="row">
+			<div ng-hide="currentPath === '/'"  ng-include="'html/piechart.html'"></div>
+	</div>  
+
+	<div class="row">
+			<div ng-hide="currentPath === '/'"  ng-include="'html/piechart2.html'"></div>
+	</div>  
+		
+</div>
+</div> 
+</div> 	
+</main> 
