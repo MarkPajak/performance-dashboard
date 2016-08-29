@@ -57,6 +57,10 @@ dashboardapp.config(['$routeProvider',
         templateUrl: 'html/dashboard-satisfaction.html',
         controller: 'dashboard-controller'
       }).
+	  when('/online', {
+        templateUrl: 'html/dashboard-online.html',
+        controller: 'dashboard-controller'
+      }).
       otherwise({
         templateUrl: 'html/menu.html',
 		 controller: 'dashboard-controller'
