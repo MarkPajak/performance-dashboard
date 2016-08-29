@@ -25,7 +25,7 @@ var analyticapp_Controllers = angular.module('analyticapp_Controllers', []);
 		
 		endDate=new Date(dates.endDate['_d'])
 		var twoDigitMonth = endDate.getMonth()+1 + ""; if (twoDigitMonth.length == 1) twoDigitMonth = "0" + twoDigitMonth;
-        var twoDigitDate = endDate.getDate()+1 + ""; if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
+        var twoDigitDate = endDate.getDate() + ""; if (twoDigitDate.length == 1) twoDigitDate = "0" + twoDigitDate;
      
 		 var endDate = endDate.getFullYear()+"-"+twoDigitMonth+"-"+twoDigitDate;
 		
@@ -34,6 +34,7 @@ var analyticapp_Controllers = angular.module('analyticapp_Controllers', []);
 		 dates={"startDate":startDate,"endDate":endDate}
 			get_mysql_data(dates)
 			get_mysql_data_day_count(dates)
+			 get_mysql_data_kiosk_count(dates) 
 			 get_google_data2() 	 
 	}
 	
@@ -44,6 +45,7 @@ var analyticapp_Controllers = angular.module('analyticapp_Controllers', []);
     //$scope.google_datax;
     get_mysql_data(dates);
 		get_mysql_data_day_count(dates)
+		 get_mysql_data_kiosk_count(dates) 
 	$scope.satisfactions=0;
 	
 	
@@ -205,7 +207,125 @@ var analyticapp_Controllers = angular.module('analyticapp_Controllers', []);
 				})
 		}
 		
+			    function get_mysql_data_kiosk_count(dates) {
+        mysql_data.get_google_data(dates)
+	
+            .success(function (studs) {
+                $scope.google_data = studs;
+				
+				console.log(dates.startDate['_d'])
+				
+				
+			var labels=[]
+				
+				
+			var series_a=[]
+			var series_b=[]
+			var series_c=[]
+			var series_d=[]
+			var series_e=[]
+			
+			var alldata=[]
+			
+			var data_labels=[]
+			console.log('makechart')
+			
+	
+			
+			
+				_.each($scope.google_data.kiosk_tally , function( row) {
+				
+				
+				
+				if(labels.indexOf(row.kiosk)==-1){
+					
+					labels.push(row.kiosk)
+				}
+							
+							if(row.CATEGORY.toLowerCase()=="very satisfied" ){
+								series_a.push(row.COUNT )
+							}
+							
+							
+							if(row.CATEGORY.toLowerCase()=="satisfied" ){
+								series_b.push(row.COUNT )
+							}
+							
+							
+							if( row.CATEGORY.toLowerCase()=="neither satisfied nor disatisfied"){
+								series_c.push(row.COUNT )
+							}
+							
+							if(row.CATEGORY.toLowerCase()=="disatisfied" ){
+								series_d.push(row.COUNT )
+							}
+							
+							if(row.CATEGORY.toLowerCase()=="very disatisfied" ){
+								series_e.push(row.COUNT )
+							}
+							
+							
+							
+					
+						
 		
+				
+				})
+				
+				
+									var barOptions_stacked = {
+						tooltips: {
+							enabled: false
+						},
+						hover :{
+							animationDuration:0
+						},
+						scales: {
+							xAxes: [{
+								ticks: {
+									beginAtZero:true,
+									fontFamily: "'Open Sans Bold', sans-serif",
+									fontSize:11
+								},
+								scaleLabel:{
+									display:false
+								},
+								gridLines: {
+								}, 
+								stacked: true
+							}],
+							yAxes: [{
+								gridLines: {
+									display:false,
+									color: "#fff",
+									zeroLineColor: "#fff",
+									zeroLineWidth: 0
+								},
+								ticks: {
+									fontFamily: "'Open Sans Bold', sans-serif",
+									fontSize:11
+								},
+								stacked: true
+							}]
+						},
+						legend:{
+							display:true
+						},
+						
+				
+						pointLabelFontFamily : "Quadon Extra Bold",
+						scaleFontFamily : "Quadon Extra Bold",
+					};
+
+						$scope.options_kiosk_count=barOptions_stacked
+						$scope.labels_kiosk_count = labels
+						$scope.series_kiosk_count = ["very satisfied","satisfied","neither satisfied nor disatisfied","disatisfied","very disatisfied"];
+						$scope.data_kiosk_count =[series_a,series_b,series_c,series_d,series_e]
+										
+			
+					
+				})
+		}
 		
 		
 	  
