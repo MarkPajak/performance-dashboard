@@ -1,5 +1,5 @@
 {
-  "name": "analytics app",
+  "name": "analytics-app",
   "version": "1.1.1",
   "description": "interactive museum content browser",
   "main": "index.js",
