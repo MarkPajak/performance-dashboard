@@ -13,6 +13,17 @@ src: url('webfonts/2E10A6_1_0.eot');
 src: url('webfonts/2E10A6_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E10A6_1_0.woff2') format('woff2'),url('webfonts/2E10A6_1_0.woff') format('woff'),url('webfonts/2E10A6_1_0.ttf') format('truetype');}
 
 */
+.global-header {
+    background-color: #4B565C;
+    overflow: hidden;
+    position: relative;
+    height: 79px;
+}
+.strapline {
+    color: #fff;
+       text-align: center;
+  
+}
 body {
 /*cursor:none!important;*/
 /*cursorxxx:url(../images/cursor.png), none!important;*/
