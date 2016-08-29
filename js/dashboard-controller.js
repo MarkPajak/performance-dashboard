@@ -3,7 +3,18 @@ var analyticapp_Controllers = angular.module('analyticapp_Controllers', []);
 
 
 
- analyticapp_Controllers.controller('dashboard-controller', ['$scope','mysql_data','StudentDataOp', function ($scope, mysql_data,StudentDataOp) {
+ analyticapp_Controllers.controller('dashboard-controller', ['$location','$scope','mysql_data','StudentDataOp', function ($location,$scope, mysql_data,StudentDataOp) {
+	 
+	 
+	    $scope.go = function ( path ) {
+						  
+						   
+							$location.path( path);
+							
+						  
+					};
+					
+					
 	
 	$scope.datePicker="";
 	  $scope.datePicker.date = {startDate: null, endDate: null};

@@ -49,16 +49,18 @@ dashboardapp.config(function(ChartJsProvider) {
 dashboardapp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/dashboard', {
-        templateUrl: 'html/dashboard.html',
+      when('/visitor-feedback', {
+        templateUrl: 'html/dashboard-visitor.html',
         controller: 'dashboard-controller'
       }).
-	  when('/satisfaction', {
+	  when('/digital', {
         templateUrl: 'html/dashboard-satisfaction.html',
         controller: 'dashboard-controller'
       }).
       otherwise({
-        redirectTo: '/'
+        templateUrl: 'html/menu.html',
+		 controller: 'dashboard-controller'
+       
       });
   }]);
 
