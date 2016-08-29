@@ -1,0 +1,125 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+
+			<!-- prevent sideways scrolling-->
+			<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+			<!--
+			<meta name="viewport" content="width=device-width, initial-scale=1">-->
+			<meta charset="utf-8">
+			<title>Museum Story & Object Browser</title>
+
+			<!-- CSS -->
+			<!-- load bootstrap (bootswatch version) -->
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/style.css">
+
+			<link rel="stylesheet" href="css/app.css">
+			<link rel="stylesheet" href="css/animations.css">
+			<link rel="stylesheet" href="css/responsive.css">
+			<link href="css/one-page-wonder.css" rel="stylesheet">
+			<link  href="css/deck-grid.css" rel="stylesheet"> <!-- 3 KB -->
+
+			<link rel="stylesheet" href="css/normalize.css">
+
+			<link rel="stylesheet" href="css/timeline.css">
+			<link rel="stylesheet" href="node_modules/angulargrid/demo/performantScroll/css/normalize.css">
+			<link rel='stylesheet prefetch' href='css/angular-material.css'>
+			<link rel="stylesheet" href="node_modules/angulargrid/demo/performantScroll/css/style.css">
+			<link  href="css/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<link rel="stylesheet" href="node_modules/bootstrap-daterangepicker/daterangepicker.css"/>
+
+
+			<!-- JS -->
+			<!-- load angular, ngRoute, ngAnimate -->
+
+			<script src="node_modules/jquery/dist/jquery.js"></script>
+			<script src="node_modules/angular/angular.js"></script>
+			<script src="node_modules/angular-animate/angular-animate.js"></script>
+
+			<script src="node_modules/bootstrap-daterangepicker/moment.min.js"></script>
+			<script src="node_modules/bootstrap-daterangepicker/daterangepicker.js"></script>
+			<script src="lib/angular-daterangepicker.js"></script>
+
+			<script src="node_modules/angular-route/angular-route.js"></script>
+			<script src="node_modules/angular-resource/angular-resource.js"></script>
+			<script src="node_modules/angular-utils-pagination/dirPagination.js"></script>
+			<script src="node_modules/angular-aria/angular-aria.min.js"></script>
+
+			<script src="node_modules/ng-scrollbar/dist/ng-scrollbar.min.js"></script>
+		<!--	<script src="node_modules/pinch-zoom/dist/ng-pinch-zoom.min.js"></script>-->
+		
+			<script src="node_modules/angular-timelinejs3/dist/js/ng-timeline.js"></script>
+			<script src="lib/timeline/timelineJS.js"></script>
+			<script src="node_modules/angulargrid/angulargrid.min.js"></script>
+			<script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+
+			<script src="node_modules/angular-route/angular-route.js"></script>
+
+
+			
+			<script src="node_modules/angular-material/angular-material.js"></script>
+			<script src="node_modules/fotorama/fotorama.js"></script> <!-- 16 KB -->
+
+
+			<script src="node_modules/underscore/underscore.js"></script>
+			<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+			<script src="node_modules/fuse.js/src/fuse.min.js"></script>
+
+			<script src="node_modules/angular-resource/angular-resource.js"></script>
+			<script src="node_modules/angular-utils-pagination/dirPagination.js"></script>
+			<script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+			<script src="node_modules/ng-scrollbar/dist/ng-scrollbar.min.js"></script>
+
+			
+			<!--DEV forms-->
+		   <script src="node_modules/api-check/dist/api-check.min.js"></script>
+			<script src="node_modules/angular-formly/dist/formly.min.js"></script>
+			<script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+			
+			<!--DEV charts-->
+			<script src="node_modules/angular-bootstrap/ui-bootstrap.min.js"></script>
+			<script src="node_modules/chart.js/dist/Chart.js"></script>
+			<script src="node_modules/angular-chart/angular-chart.js"></script>
+	
+			<!--googel analytics api charts-->
+			<script src="node_modules/angular-google-gapi/dist/angular-google-gapi.min.js"></script>
+		
+		
+		
+		
+
+
+
+		
+			<script src="js/app.js"></script>
+			<script src="js/kiosk-tweaks.js"></script>
+			<script src="js/animations.js"></script>
+			<script src="js/controllers.js"></script>
+			<script src="js/slideshow-controller.js"></script>
+			<script src="js/timeline-controller.js"></script>
+			<script src="js/details-controller.js"></script>
+			<script src="js/list-controller.js"></script>
+			<script src="js/feedback-controller.js"></script>
+			<script src="js/grid-controller.js"></script>
+			<script src="js/screensaver-controller.js"></script>
+			<script src="js/screensaver-images.js"></script>
+			<script src="js/filters.js"></script>
+			<script src="js/services.js"></script>
+			<script src="js/directives.js"></script>	
+			
+			<script src="js/data-service.js"></script>
+			<script src="js/dashboard-controller.js"></script>
+			
+							
+</head>
+<body drag-scroll="enabled" ng-app="dashboardapp">  
+
+	<div  class="view-container">
+		
+		<div   ng-click="screensaverOff()"  autoscroll="true" class="page {{ pageClass }}" ng-view></div>	
+	</div>
+	
+</body>
+</html>
