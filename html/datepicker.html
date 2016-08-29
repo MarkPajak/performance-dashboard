@@ -3,9 +3,10 @@
             <div class="panel-heading">Select a date range</div>
             <div class="panel-body">
            <input date-range-picker class="form-control date-picker" type="text" ng-model="datePicker.date" />
-	  
+	   <br>
+	   <button class="btn" ng-click="goCharts(datePicker.date)">refresh</button>	
 		  </div>
-		   <button class="btn" ng-click="goCharts(datePicker.date)">refresh</button>	
+		  
           </div>
 		 
 </div>

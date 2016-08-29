@@ -4,12 +4,23 @@
     text-align: center;
     background: #eeeeee;
 }
+.logo{
+width:200px;
+}
+
 </style>
+<header class=" global-header global-header--service ">
+<div class="row">
+
+<img class="logo pull-right" src="img/culturelogo.JPG" />
+	<h3 class="strapline">Bristol Culture Performance Dashboard</h3>
+</div>
+</header>
 <div class=" menuButtons  panel-default">
   <div class="panel-body">
 
-<button    style="{{functionThatReturnsStyle()}}" ng-click="go('/'); screensaverOff();" "  class="btn btn-primary btn-lg">Menu 1</button>
-<button    style="{{functionThatReturnsStyle()}}"  ng-click="go('/grid/story');screensaverOff()" type="stories" class="btn btn-primary btn-lg">Menu 2</button>
+<button    style="{{functionThatReturnsStyle()}}" ng-click="go('visitor-feedback'); screensaverOff();" "  class="btn btn-primary btn-lg">Visitor Feedback</button>
+<button    style="{{functionThatReturnsStyle()}}"  ng-click="go('digital');screensaverOff()" type="stories" class="btn btn-primary btn-lg">Digital</button>
 <button    style="{{functionThatReturnsStyle()}}"  ng-click="go('/grid/object');screensaverOff()"  type="objects"  class="btn btn-primary btn-lg">Menu 3</button>
 <button    ng-hide="true" style="{{functionThatReturnsStyle()}}"  ng-click="go('timeline');screensaverOff()"  class="btn btn-primary btn-lg">Menu 4</button>
 <button    style="{{functionThatReturnsStyle()}}" ng-click="go('/list');screensaverOff()"  class="btn btn-primary btn-lg">List</button>
